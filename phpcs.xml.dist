@@ -3,7 +3,6 @@
          xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
 
     <arg name="basepath" value="."/>
-    <arg name="cache" value=".phpcs-cache"/>
     <arg name="colors"/>
     <arg name="extensions" value="php"/>
     <arg name="parallel" value="80"/>
@@ -14,6 +13,7 @@
     <!-- Paths to check -->
     <file>src</file>
     <file>tests</file>
+    <exclude-pattern>tests/data/*</exclude-pattern>
 
     <!-- Include all rules from the Zend Coding Standard -->
     <rule ref="ZendCodingStandard"/>

@@ -25,7 +25,7 @@ class AngryRegularExpressionPatternRuleTest extends RuleTestCase
             [
                 [
                     'Regex pattern is invalid: Unfavorable `^` or `$` /^[a-zA-Z0-9]+$/',
-                    12,
+                    15,
                 ],
             ]
         );
