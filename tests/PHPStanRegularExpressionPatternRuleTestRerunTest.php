@@ -1,22 +1,28 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace SfpTest\AngryRegex;
 
+use PHPStan\Rules\Rule;
+use PHPStan\Testing\RuleTestCase;
 use Sfp\AngryRegex\AngryRegularExpressionPatternRule;
+
+use const PHP_VERSION_ID;
 
 /**
  * borrowed from PHPStan's RegularExpressionPatternRuleTest
  * https://github.com/phpstan/phpstan/blob/0.11.8/tests/PHPStan/Rules/Regexp/RegularExpressionPatternRuleTest.php
  * to check regression
  */
-class PHPStanRegularExpressionPatternRuleTestRerunTest extends \PHPStan\Testing\RuleTestCase
+class PHPStanRegularExpressionPatternRuleTestRerunTest extends RuleTestCase
 {
-    protected function getRule(): \PHPStan\Rules\Rule
+    protected function getRule() : Rule
     {
         return new AngryRegularExpressionPatternRule();
     }
 
-    public function testValidRegexPatternBefore73(): void
+    public function testValidRegexPatternBefore73() : void
     {
         if (PHP_VERSION_ID >= 70300) {
             $this->markTestSkipped('This test requires PHP < 7.3.0');
@@ -117,7 +123,7 @@ class PHPStanRegularExpressionPatternRuleTestRerunTest extends \PHPStan\Testing\
         );
     }
 
-    public function testValidRegexPatternAfter73(): void
+    public function testValidRegexPatternAfter73() : void
     {
         if (PHP_VERSION_ID < 70300) {
             $this->markTestSkipped('This test requires PHP >= 7.3.0');
@@ -217,5 +223,4 @@ class PHPStanRegularExpressionPatternRuleTestRerunTest extends \PHPStan\Testing\
             ]
         );
     }
-
 }

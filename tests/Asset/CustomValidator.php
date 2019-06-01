@@ -1,7 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace SfpTest\AngryRegex\Asset;
+
+use function preg_match;
 
 class CustomValidator extends BaseValidator
 {

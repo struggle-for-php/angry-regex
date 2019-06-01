@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace SfpTest\AngryRegex;
@@ -19,13 +20,13 @@ class AngryRegularExpressionPatternRuleTest extends RuleTestCase
     {
         $this->analyse(
             [
-                __DIR__ . '/Asset/CustomValidator.php'
+                __DIR__ . '/Asset/CustomValidator.php',
             ],
             [
                 [
-                    "Regex pattern is invalid: Unfavorable `^` or `$` /^[a-zA-Z0-9]+$/",
-                    12
-                ]
+                    'Regex pattern is invalid: Unfavorable `^` or `$` /^[a-zA-Z0-9]+$/',
+                    12,
+                ],
             ]
         );
     }
