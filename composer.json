@@ -1,0 +1,33 @@
+{
+    "name": "struggle-for-php/angry-regex",
+    "description": "PHPStan Rule to detect Unfavorable Regex",
+    "license": [
+        "MIT"
+    ],
+    "require": {
+        "php":">=7.2.0",
+        "phpstan/phpstan": "^0.11"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.1",
+        "zendframework/zend-coding-standard": "2.0.0-alpha3",
+        "phpstan/phpstan-phpunit": "^0.11.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sfp\\AngryRegex\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SfpDemo\\AngryRegex\\": "demo/src",
+            "SfpTest\\AngryRegex\\": "tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf"
+    }
+}
