@@ -1,6 +1,7 @@
 {
     "name": "struggle-for-php/angry-regex",
     "description": "PHPStan Rule to detect Unfavorable Regex",
+    "type": "phpstan-extension",
     "license": [
         "MIT"
     ],
@@ -29,5 +30,12 @@
     "scripts": {
         "cs-check": "phpcs",
         "cs-fix": "phpcbf"
+    },
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "rules.neon"
+            ]
+        }
     }
 }
