@@ -16,5 +16,8 @@
     <exclude-pattern>tests/data/*</exclude-pattern>
 
     <!-- Include all rules from the Zend Coding Standard -->
-    <rule ref="ZendCodingStandard"/>
+    <rule ref="ZendCodingStandard">
+        <exclude name="Generic.Files.LineLength"/>
+    </rule>
+
 </ruleset>
