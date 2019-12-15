@@ -1,0 +1,25 @@
+language: php
+
+sudo: false
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.2
+      env:
+        - EXECUTE_COVERAGE=true
+        - EXECUTE_CS_CHECK=true
+    - php: 7.3
+    - php: 7.4
+
+before_install:
+  - if [[ $EXECUTE_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
+
+before_script:
+  - composer self-update
+  - composer install --dev --prefer-source
+
+script:
+  - if [[ $EXECUTE_COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --coverage-clover=coverage.clover ; fi
+  - if [[ $EXECUTE_COVERAGE != 'true' ]]; then ./vendor/bin/phpunit ; fi
+  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs --standard=phpcs.xml src tests ; fi
